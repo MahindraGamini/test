@@ -114,7 +114,7 @@ const RuleForm = ({ onEvaluate }) => {
         if (!evaluationResult) return null;
         return (
             <div className="mt-6 p-4 bg-gray-100 rounded-lg">
-                <h4 className="text-xl font-semibold text-gray-800">Evaluation Result:</h4>
+                <h4 className="text-xl font-semibold text-gray-800">Result:</h4>
                 <pre className="text-gray-700 mt-2 whitespace-pre-wrap">{JSON.stringify(evaluationResult, null, 2)}</pre>
             </div>
         );

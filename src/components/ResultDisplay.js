@@ -2,7 +2,7 @@ import React from 'react';
 
 const ResultsDisplay = ({ result }) => {
     if (!result) {
-        return   // Return null if no result
+        return   
     }
 
     return (
