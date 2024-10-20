@@ -66,7 +66,7 @@ const RuleForm = ({ onEvaluate }) => {
         setError(null); // Reset error before the request
         try {
             const response = await axios.post('http://localhost:8081/api/rules/combine', {
-                rules: combinedRules,
+                ruleStrings: combinedRules,
                 operator: combineOperator,
             });
             setCombinedRules(response.data.combinedRules);
