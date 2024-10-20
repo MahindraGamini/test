@@ -60,7 +60,6 @@ const RuleForm = ({ onEvaluate }) => {
             setLoading(false);
         }
     };
-
     const handleCombine = async () => {
         setLoading(true);
         setError(null); // Reset error before the request
@@ -69,14 +68,17 @@ const RuleForm = ({ onEvaluate }) => {
                 ruleStrings: combinedRules,
                 operator: combineOperator,
             });
-            setCombinedRules(response.data.combinedRules);
-            setSubmittedData({ type: 'Combined Rules', combinedRules, combineOperator }); // Store combined rules
+            // Store the response data for display
+            setEvaluationResult(response.data);
+            setSubmittedData({ type: 'Combined Rules', combinedRules, combineOperator, response: response.data }); // Store combined rules and response
+            console.log('Combine Rules Response:', response.data);
         } catch (error) {
             handleError(error, 'combining the rules');
         } finally {
             setLoading(false);
         }
     };
+
 
     const handleEvaluate = async () => {
         setLoading(true);
