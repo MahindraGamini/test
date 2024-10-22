@@ -91,6 +91,8 @@ const RuleForm = ({ onEvaluate }) => {
             setEvaluationResult(response.data.result);
             setSubmittedData({ type: 'Rule Evaluation', userData, rule }); // Store user data and rule for display
             onEvaluate(response.data.result);
+
+            console.log(response);
         } catch (error) {
             handleError(error, 'evaluating the rule');
         } finally {
@@ -237,6 +239,14 @@ const RuleForm = ({ onEvaluate }) => {
             {selectedAction === 'evaluate' && (
                 <>
                     <h4 className="text-lg font-semibold text-gray-700 mb-4">User Data</h4>
+                    <input
+                        type="text"
+                        placeholder="Rules"
+                        name="rule"
+                        value={rule}
+                        onChange={(e) => setRule(e.target.value)}
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+                    />
                     <input
                         type="text"
                         placeholder="Age"
